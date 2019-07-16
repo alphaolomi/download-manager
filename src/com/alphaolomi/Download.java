@@ -9,17 +9,17 @@ import java.util.Observable;
 class Download extends Observable implements Runnable {
     private static final int MAX_BUFFER_SIZE = 1024;
 
-    public static final String[] STATUSES = {"Downloading", "Paused", "Complete", "Cancelled", "Error"};
+    static final String[] STATUSES = {"Downloading", "Paused", "Complete", "Cancelled", "Error"};
 
-    public static final int DOWNLOADING = 0;
+    static final int DOWNLOADING = 0;
 
-    public static final int PAUSED = 1;
+    static final int PAUSED = 1;
 
-    public static final int COMPLETE = 2;
+    private static final int COMPLETE = 2;
 
-    public static final int CANCELLED = 3;
+    private static final int CANCELLED = 3;
 
-    public static final int ERROR = 4;
+    static final int ERROR = 4;
 
     private final URL url; // download URL
 
@@ -30,7 +30,7 @@ class Download extends Observable implements Runnable {
     private int status; // current status of download
 
     // Constructor for Download.
-    public Download(URL url) {
+    Download(URL url) {
         this.url = url;
         size = -1;
         downloaded = 0;
@@ -41,36 +41,36 @@ class Download extends Observable implements Runnable {
     }
 
     // Get this download's URL.
-    public String getUrl() {
+    String getUrl() {
         return url.toString();
     }
 
     // Get this download's size.
-    public int getSize() {
+    int getSize() {
         return size;
     }
 
     // Get this download's progress.
-    public float getProgress() {
+    float getProgress() {
         return ((float) downloaded / size) * 100;
     }
 
-    public int getStatus() {
+    int getStatus() {
         return status;
     }
 
-    public void pause() {
+    void pause() {
         status = PAUSED;
         stateChanged();
     }
 
-    public void resume() {
+    void resume() {
         status = DOWNLOADING;
         stateChanged();
         download();
     }
 
-    public void cancel() {
+    void cancel() {
         status = CANCELLED;
         stateChanged();
     }
@@ -96,21 +96,22 @@ class Download extends Observable implements Runnable {
         RandomAccessFile file = null;
         InputStream stream = null;
 
-        try {       // Open connection to URL.
+        try {
+            // Open connection to URL.
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-// Specify what portion of file to download.
+            // Specify what portion of file to download.
             connection.setRequestProperty("Range", "bytes=" + downloaded + "-");
 
-// Connect to server.
+            // Connect to server.
             connection.connect();
 
-// Make sure response code is in the 200 range.
+            // Make sure response code is in the 200 range.
             if (connection.getResponseCode() / 100 != 2) {
                 error();
             }
 
-// Check for valid content length.
+            // Check for valid content length.
             int contentLength = connection.getContentLength();
             if (contentLength < 1) {
                 error();

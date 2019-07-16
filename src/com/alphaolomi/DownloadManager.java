@@ -1,8 +1,6 @@
 package com.alphaolomi;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +8,7 @@ import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
 
-public class DownloadManager extends JFrame implements Observer {
+class DownloadManager extends JFrame implements Observer {
 
     private static final long serialVersionUID = 1L;
     private final JTextField addTextField = new JTextField(30);
@@ -23,7 +21,7 @@ public class DownloadManager extends JFrame implements Observer {
     private Download selectedDownload;
     private boolean clearing;
 
-    public DownloadManager() {
+    private DownloadManager() {
         setTitle("Download Manager");
         setSize(640, 480);
         addWindowListener(new WindowAdapter() {

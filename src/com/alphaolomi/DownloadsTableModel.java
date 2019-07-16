@@ -13,17 +13,17 @@ class DownloadsTableModel extends AbstractTableModel implements Observer {
 
     private final ArrayList<Download> downloadList = new ArrayList<>();
 
-    public void addDownload(Download download) {
+    void addDownload(Download download) {
         download.addObserver(this);
         downloadList.add(download);
         fireTableRowsInserted(getRowCount() - 1, getRowCount() - 1);
     }
 
-    public Download getDownload(int row) {
+    Download getDownload(int row) {
         return downloadList.get(row);
     }
 
-    public void clearDownload(int row) {
+    void clearDownload(int row) {
         downloadList.remove(row);
         fireTableRowsDeleted(row, row);
     }
