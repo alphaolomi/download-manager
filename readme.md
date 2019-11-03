@@ -1,12 +1,6 @@
-# Download Manager
+<h1 align="center">download-manager</h1>
 
-> Under light development
+<p align="center">
+<img src="https://img.shields.io/badge/made%20in-tanzania-green?style=for-the-badge" alt="made in tanzania">
+</p>
 
-## Getting started
-
-Clone repo
-Execute
-
-## Author
-
-Alpha Olomi [hello@alphaolomi.com](mailto:hello@alphaolomi.com)
