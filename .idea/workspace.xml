@@ -12,7 +12,11 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Vg5GBJad8FN1QfRek89jugh3gQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,6 +27,26 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DownloadManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alphaolomi.DownloadManager" />
+      <module name="robust-download-manager.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.alphaolomi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DownloadManager" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -46,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577661799526</updated>
-      <workItem from="1577661800889" duration="11000" />
+      <workItem from="1577661800889" duration="475000" />
     </task>
     <servers />
   </component>
